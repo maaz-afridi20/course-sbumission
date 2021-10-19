@@ -315,21 +315,40 @@ gcd <- function(a,b){
 
 
 ```{r }
+# generating user inputs
+
+number1 <- as.integer(readline(prompt = "Enter First number"))
+number2 <- as.integer(readline(prompt = "Enter Second numberr"))
 
 ```
 
 
 ```{r }
+# creating Function : 
+
+allConditionsMeet <- funtion(number1,number2){
+    if(number1%%2==0 && number2%%2==0){
+        return(T)
+    }else{
+        return(F)
+    }
+}
 
 ```
 
 
 ```{r }
+# Calling Functions :
+
+allConditionsMeet(20,19)
 
 ```
 
 
 ```{r }
+# Printing the arguments : 
+
+print(args(allConditionsMeet))
 
 ```
 
