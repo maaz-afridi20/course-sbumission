@@ -220,10 +220,13 @@ mat_1
 
 ```{r }
 # ietrating over Matrix:
-
-for(i in mat_1){
-    print(i)
+mat_1 <- matrix(1:9, 3,3)
+for (i in seq_len(nrow(mat_1))) {
+    for (j in seq_len(ncol(mat_1))) {
+        print(mat_1[i,j])
+    }
 }
+
 ```
 
 
@@ -381,11 +384,19 @@ print(args(allConditionsMeet))
 
 
 ```{r }
+# Matrix Multiplication :
+
+    matrix_1 <- matrix(1:6, 2,3)
+    matrix_2 <- matrix(1:6,3,2)
+    
+    matrix_1%*%matrix_2
 
 ```
 
 
 ```{r }
+
+# element wise multiplication is not compatible 
 
 ```
 
