@@ -436,16 +436,33 @@ print(args(allConditionsMeet))
 
 
 ```{r }
+# Saving Time :
 
+curr_date <- Sys.time()
 ```
 
 
 ```{r }
 
+curr_date <- as.POSIXlt(Sys.time())
+namess <- unclass(curr_date)
+
+namess$mday
+namess$wday
+namess$year
+namess$sec
+namess$hour
+
+
 ```
 
 
 ```{r }
+# Converting Time And Date : 
+
+curr_time <- Sys.time()
+curr_date <- Sys.Date()
+
 
 ```
 
@@ -476,7 +493,9 @@ print(args(allConditionsMeet))
 
 
 ```{r }
-
+curr_time <- Sys.time()
+mytime <- as.POSIXlt(curr_time,tz = "GMT")
+diff = curr_time - mytime
 ```
 
 
@@ -520,26 +539,41 @@ print(args(allConditionsMeet))
 
 
 ```{r }
+numbers <- list(100:150)
+lapply(numbers, mymean)
+```
 
+
+```{r }
+sapply(numbers, mean)
+sapply(numbers, mystd)
 ```
 
 
 ```{r }
 
-```
-
-
-```{r }
-
-```
-
-
-```{r }
+mymean <- function(a){
+    return(mean(a))
+}
+mymean(100:150)
 
 ```
 
 
 ```{r }
+mystd <- function(b){
+    return(sd(b))
+}
+mystd(10:49)
+```
+
+
+```{r }
+matt <- matrix(1:9, 3,3)
+apply(matt, 1, mystd)
+apply(matt, 2, mystd)
+apply(matt, 1, mymean)
+apply(matt, 2, mymean)
 
 ```
 
@@ -560,11 +594,14 @@ print(args(allConditionsMeet))
 
 
 ```{r }
+matt <- matrix(1:16, 4,4)
 
+rowMeans(matt)
 ```
 
 
 ```{r }
+colMeans(matt)
 
 ```
 
@@ -618,27 +655,33 @@ head(Orange)
 
 
 ```{r }
+table(Orange$Tree)
 
 ```
 
 
 ```{r }
-
+head(Orange)
+split_dataaa <- split(Orange, Orange$circumference)
 ```
 
 
 ```{r }
-
+split_dataaa <- split(Orange, Orange$circumference)
+print(split_dataaa$`30`)
+print(split_dataaa$`75`)
 ```
 
 
 ```{r }
-
+t <- split_dataaa$`214`
+print(t$age)
 ```
 
 
 ```{r }
-
+t <- split_dataaa$`3`
+print(t$age)
 ```
 
 
